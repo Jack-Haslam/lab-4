@@ -1,0 +1,27 @@
+Step-1 - Quick HTTP header check with curl
+Q1) I got status line "HTTP/1.1/200 OK". This means the request was successful.
+Q2) The server header value was "Apache/2.4.7 (Ubuntu)". This is specific.
+
+Step-2 - Fetch the full page body
+Q1) The <title> is "Go ahead and ScanMe!
+Q2) <form class="nst-search" id="nst-foot-search" action="/search/">
+    <input class="nst-search-q" name="q" type="search" placeholder="Site Search">
+        <button class="nst-search-button" title="Search">
+            <img style="width:100%;aspect-ratio:1/1;" alt="" aria-hidden="true" src="/shared/images/nst-icons.svg#search">
+        </button>
+    </form>
+    It's atributes are to search.
+
+Step-3 - Compare curl and requests
+Q1) Yes - Apache/2.4.7 (Ubuntu)
+Q2) It was the same.
+
+Step-4: Inspect headers with a different User-Agent
+Q1) Yes, Content length went up from 172 - 177.
+Q2) That specific users that can be accessed have more access to websites and could penetrate firewalls etc.
+
+Step-5 - Short synthesis
+Q1) The three most useful pieces of information from the above scanning would be inspecting the header with different user agents.
+    This is useful to see if you can gain greather access to a website. The second would be Curl requests. This is useful to see what specific
+    version of the website is being used. The third would be HTTP header checks, because you could see if the reuest was successful or not.
+    A defensive suggestion would be to not show which specific version of the website is being used.

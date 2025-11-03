@@ -1,0 +1,52 @@
+Step 3:
+Code ran:
+    Status: 200
+    Final URL: http://scanme.nmap.org/
+    Server header: Apache/2.4.7 (Ubuntu)
+    Content-Type: text/html
+    First 200 chars of body:\n <!DOCTYPE html>\n<html lang="en">\n<head>\n<title>Go ahead and ScanMe!</title>\n<meta name="viewport" content="width=device-width,initial-scale=1">\n<meta name="theme-color" content="#2A0D45">\n<link rel="p
+
+Curl -i URL:
+    HTTP/1.1 200 OK
+    Date: Mon, 03 Nov 2025 16:20:23 GMT
+    Server: Apache/2.4.7 (Ubuntu)
+    Accept-Ranges: bytes
+    Vary: Accept-Encoding
+    Transfer-Encoding: chunked
+    Content-Type: text/html
+
+Step 4:
+curl -i  -A "MyTestAgent/1.0" https://httpbin.org/headers,
+    HTTP/2 200 
+    date: Mon, 03 Nov 2025 16:23:51 GMT
+    content-type: application/json
+    content-length: 177
+    server: gunicorn/19.9.0
+    access-control-allow-origin: *
+    access-control-allow-credentials: true
+
+    {
+    "headers": {
+        "Accept": "*/*", 
+        "Host": "httpbin.org", 
+        "User-Agent": "MyTestAgent/1.0", 
+        "X-Amzn-Trace-Id": "Root=1-6908d70f-6d5c2fba0df02c5813b3fe89"
+        }
+    }
+curl -i  https://httpbin.org/headers,
+    HTTP/2 200 
+    date: Mon, 03 Nov 2025 16:24:56 GMT
+    content-type: application/json
+    content-length: 172
+    server: gunicorn/19.9.0
+    access-control-allow-origin: *
+    access-control-allow-credentials: true
+
+    {
+    "headers": {
+        "Accept": "*/*", 
+        "Host": "httpbin.org", 
+        "User-Agent": "curl/8.5.0", 
+        "X-Amzn-Trace-Id": "Root=1-6908d746-50c7e62247aa72f32d3d8231"
+        }
+    }
